@@ -39,6 +39,7 @@ Start with the [documentation index](docs/README.md).
 - [Architecture decisions](docs/decisions/README.md)
 - [Standards and integration references](docs/references.md)
 - [Initial independent adversarial reviews](docs/reviews/2026-10-02-initial/README.md)
+- [Proposed resolutions from two Sol High reviewers](docs/reviews/2026-10-02-resolutions/README.md)
 
 ## Licensing status
 

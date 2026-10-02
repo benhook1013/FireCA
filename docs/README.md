@@ -14,6 +14,7 @@ This is the initial design baseline, recorded on 2 October 2026. There is no app
 | [Decisions](decisions/README.md) | Accepted decisions and their rationale |
 | [References](references.md) | Primary standards and implementation documentation |
 | [Initial adversarial reviews](reviews/2026-10-02-initial/README.md) | Two independent fresh-agent reviews, full reports, synthesis, and proposed follow-ups |
+| [Proposed resolutions](reviews/2026-10-02-resolutions/README.md) | Two fresh Sol High proposals covering all findings, comparison, evidence gates, and unresolved choices |
 
 ## Status terminology
 

@@ -11,6 +11,8 @@
 
 The full reports are [reviewer A](reviewer-a.md) and [reviewer B](reviewer-b.md). Repository evidence links point to the frozen baseline so later documentation edits do not move their targets. This synthesis is the parent agent's interpretation of the two reviews.
 
+The subsequent [resolution review](../2026-10-02-resolutions/README.md) records suggestions from two fresh Sol High subagents given all consolidated findings and both complete reports. Its recommendations remain proposals.
+
 ## Overall assessment
 
 Both reviewers support a bounded feasibility phase and call for revision of delivery gates before broad implementation or a customer pilot. Neither recommends discarding the accepted Java/Spring Boot, Bouncy Castle, PostgreSQL/Redis, private-PKI, CSR-first, or source-available commercial direction.
