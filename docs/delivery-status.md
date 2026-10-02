@@ -37,4 +37,4 @@ Last updated: 2 October 2026. This is the execution record, not a claim that the
 
 Implementation owners are the active development agent and project owner for external/customer/legal inputs. Update each row with concrete evidence when available; do not fabricate an owner, lab, commercial agreement or completed result to clear a gate.
 
-Documentation verification for F0 checked 30 UTF-8 files, 90 local links, one local anchor, 60 frozen line references and all ten finding dispositions. Technical findings are retained; personal context and historical references use privacy-sanitized equivalents. Application/interoperability/failure drills remain unrun.
+Documentation verification for F0 checked 30 UTF-8 files, 90 local links, one local anchor, 60 frozen line references and all ten finding dispositions. Subsequent privacy cleanup uses project attribution, redacts personal/local context and maps historical baseline references to sanitized equivalents; technical findings remain preserved. Application/interoperability/failure drills remain unrun.

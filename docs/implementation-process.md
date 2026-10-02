@@ -39,6 +39,8 @@ Place each experiment's record in `docs/evidence/<experiment-id>/README.md` when
 
 Only commit explicitly synthetic, documented fixtures. Never commit live keys, credentials, tokens, private bundles, customer traces or database dumps. Evidence records can link safely redacted artifacts; sensitive artifacts remain outside the public repository.
 
+Write commands and paths relative to the checkout. Redact personal identities, home directories, workstation identifiers and private conversational background from records and generated reviewer reports. Inspect staged content and author/committer metadata before publishing; local setup instructions belong outside the public repository.
+
 Update [delivery status](delivery-status.md) with evidence links and residual gaps. Accepted design, implemented code and verified behavior are separate states. Do not close a finding solely because an ADR names its mitigation.
 
 ## Contract-specific evidence

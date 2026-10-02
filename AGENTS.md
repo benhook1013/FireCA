@@ -3,6 +3,8 @@
 ## Project stage and source of truth
 
 - FireCA is currently a design repository. Do not claim that a planned feature, deployment, or interoperability result has been implemented or verified.
+- Keep personal identity, workstation paths/names and private conversational background out of public files and review reports. Session-specific instructions stay local to the session; use project-relative paths and synthetic examples in published material.
+- Check staged content and commit attribution before publication. Use the repository's project identity rather than copying a machine's global personal Git identity.
 - Read `docs/product-scope.md`, `docs/architecture.md`, and `docs/roadmap.md` before implementing features. Decision records identify accepted product decisions; proposed implementation details remain revisable.
 - Follow `docs/implementation-process.md`, `docs/pilot-charter.md` and `docs/delivery-status.md`. ADRs 0004–0007 encode user-delegated adjudication; use them directly rather than reopening settled ordinary choices.
 - Maintain repository documentation alongside code. Record consequential architecture changes in `docs/decisions/` and update affected contracts and milestone criteria.
