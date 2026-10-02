@@ -38,6 +38,7 @@ Start with the [documentation index](docs/README.md).
 - [Licensing policy](docs/licensing.md)
 - [Architecture decisions](docs/decisions/README.md)
 - [Standards and integration references](docs/references.md)
+- [Initial independent adversarial reviews](docs/reviews/2026-10-02-initial/README.md)
 
 ## Licensing status
 

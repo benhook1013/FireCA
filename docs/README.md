@@ -13,6 +13,7 @@ This is the initial design baseline, recorded on 2 October 2026. There is no app
 | [Licensing policy](licensing.md) | Free personal use, paid organizational use, and licensing work remaining |
 | [Decisions](decisions/README.md) | Accepted decisions and their rationale |
 | [References](references.md) | Primary standards and implementation documentation |
+| [Initial adversarial reviews](reviews/2026-10-02-initial/README.md) | Two independent fresh-agent reviews, full reports, synthesis, and proposed follow-ups |
 
 ## Status terminology
 
