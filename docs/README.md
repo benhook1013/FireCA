@@ -1,12 +1,15 @@
 # FireCA documentation
 
-This is the initial design baseline, recorded on 2 October 2026. There is no application implementation yet.
+This is the adjudicated design and implementation process, recorded on 2 October 2026. There is no application implementation yet.
 
 ## Reading order
 
 | Document | Purpose |
 | --- | --- |
 | [Product scope](product-scope.md) | Customers, use cases, feature commitments, and exclusions |
+| [Implementation process](implementation-process.md) | Work cycle, feasibility checkpoints, evidence requirements and release/pilot gates |
+| [Delivery status](delivery-status.md) | Current work and per-finding design/evidence status |
+| [Pilot charter](pilot-charter.md) | Accepted first engineering focus and unvalidated commercial hypothesis |
 | [Architecture](architecture.md) | Service responsibilities, custody boundaries, storage, coordination, and deployment |
 | [Domain model](domain-model.md) | Resources, relationships, authorization, and certificate/deployment lifecycle |
 | [Roadmap](roadmap.md) | Dependency order, milestones, acceptance criteria, and outstanding choices |
@@ -23,4 +26,4 @@ This is the initial design baseline, recorded on 2 October 2026. There is no app
 - **Implemented:** present in the repository as working code or a completed artifact.
 - **Verified:** supported by a recorded check against the actual implementation.
 
-The stack, core scope, trust/custody direction, native Windows requirement, and commercial policy are accepted. Resource names, service packaging, and exact concurrency mechanisms below are proposed until implemented and validated. Only the documentation and repository bootstrap are currently implemented.
+The stack, core scope, CA ownership, initial signer/custody/recovery model, enrollment/observation direction and continuity policy are accepted. Wire/resource names, exact concurrency mechanisms, runtime versions and supported-client claims need implementation evidence. Only documentation and repository bootstrap are implemented. The full review reports retain their historical proposal status; current adjudication is in ADRs 0004–0007.

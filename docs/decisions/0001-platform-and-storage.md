@@ -23,4 +23,4 @@ Shared software signing has a shared compromise boundary. Per-tenant records and
 
 ## Implementation choices remaining
 
-Supported versions, build tooling, exact initial role/module packaging, provider storage, and the protected signer/ownership contract require decisions and validation before implementation. This record makes no performance claims or interoperability guarantees.
+Supported versions, build tooling, exact role/module interfaces and protected-operation mechanisms require selection and validation before implementation. [0004](0004-delivery-and-ca-ownership.md) selects core ownership/delivery; [0005](0005-software-signing-and-recovery.md) selects PostgreSQL key-payload storage, unlock/recovery and signing guarantees. This record makes no performance or interoperability claim.

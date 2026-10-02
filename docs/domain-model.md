@@ -1,6 +1,6 @@
 # Domain model and lifecycle
 
-These resource names and relationships are proposed. They implement the accepted scope without coupling every key to a certificate or every tenant to one CA.
+Resource names and wire schemas are proposed. Authorization, custody, signing/recovery and lifecycle semantics follow the [accepted ADRs](decisions/README.md); their implementation still requires evidence. Keys need not belong to certificates and tenants need not have just one CA.
 
 ## Core resources
 
@@ -51,6 +51,10 @@ For machine/user profiles, define which authoritative directory identity supplie
 
 Authorization/cache invalidation behavior must be defined before cached permissions or long-running jobs are enabled. A durable job does not bypass a later issuer suspension or key-operation restriction.
 
+Profiles and grants are versioned; persist the exact approved version and input binding. Recheck current applicable grants and issuer state at protected admission, and read/release authorization before returning results. Product checks do not establish an independent approval authority against privileged control-plane/database compromise in the initial trusted-platform tier.
+
+Authority import verifies key/certificate matching, chain constraints and explicit authorization of the tenant/authority association. CA-key transfer is a separate protected operator procedure.
+
 ## Key custody modes
 
 | Mode | FireCA retains the application private key? | Delivery |
@@ -68,14 +72,21 @@ Browser generation needs explicit compatibility/format choices and can provide a
 
 ## Issuance and renewal
 
-Proposed issuance workflow:
+Required issuance semantics; exact interfaces remain to be implemented:
 
 1. Authenticate, authorize identifiers/profile/issuer, and validate the CSR.
 2. Persist the enrollment request, approved inputs, idempotency identity, and durable work.
-3. Allocate the issuer/serial and claim the work using authoritative ownership checks.
-4. Perform the approved signing/provider operation under its protected contract.
-5. Persist the certificate/result and audit/outbox records before exposing a completed response.
-6. Return the stored result; reconcile interrupted attempts using the durable request identity.
+3. Allocate the issuer/serial, freeze exact canonical to-be-signed bytes/algorithm and claim the work using authoritative ownership checks.
+4. Admit the structured signing operation under current authority/grant/key/profile/generation checks.
+5. Execute the provider; preserve ambiguous attempts and reconcile the same frozen inputs.
+6. Select and commit one certificate/result with audit/outbox history.
+7. Recheck applicable read/release authorization and state; return the selected stored result.
+
+Provider execution, persisted certificate selection and release are separate facts. Repeated provider execution may produce different signature bytes for the same inputs; uncommitted or losing artifacts are never normal response results.
+
+Suspension requested blocks new leaf admission and new leaf-result release. Effective/drained requires completion or exclusion of in-flight attempts. Preserve signed-but-withheld records. Ordinary access to already released inventory remains tenant-authorized; suspension is not revocation.
+
+Recovery mode disables signing/releases until issuer security history is reconciled. Unknown/incomplete restored history keeps affected issuers quarantined. A recovery epoch identifies an operating run rather than proving prior history or excluding an old signer.
 
 External issuance adds provider-specific pending authorization/order states. A timeout is not evidence that an external issuer failed to issue; reconcile before replacing its order.
 
@@ -97,6 +108,8 @@ Imported certificates can enter the same inventory/asset model without going thr
 Persist issuance facts, assignments, observations, and alert state separately. "Unreachable" or "not recently observed" is not healthy deployment evidence. A collector must be authorized for the system and cannot rewrite unrelated tenant inventory.
 
 ## Lifecycle rules to specify before implementation
+
+ADRs 0005–0007 already set initial suspension/recovery, wrapping/unlock, CRL retention and commercial continuity semantics. The following need exact schemas, permissions, configuration and executable evidence within those decisions:
 
 - Profile versioning and renewal behavior after policy changes.
 - Issuer activation, suspension, rollover, retirement, and revocation publication.

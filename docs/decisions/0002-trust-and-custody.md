@@ -30,3 +30,5 @@ CSR verification establishes key-related proof, not authorization for every requ
 ## Required integration
 
 ACME is part of the initial usable CA release. Native Windows autoenrollment is a required eventual feature; an endpoint inventory agent does not fulfill it. Validate the native route early with real clients before treating Windows compatibility as established.
+
+[0006](0006-enrollment-observation-and-trust.md) selects DNS-01 contexts, the early native Windows experiment, one TLS observer and the supported-client/status contract. [0005](0005-software-signing-and-recovery.md) defines the initial trusted-platform software tier and recovery boundaries.

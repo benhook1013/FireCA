@@ -17,6 +17,7 @@ These primary references guide implementation and interoperability work. A refer
 - [Microsoft: XCEP/WSTEP domain enrollment example](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-cersod/e35f4aaa-9087-4513-845a-aabb7eb12418)
 - [Microsoft: MS-WSTEP protocol](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-wstep/)
 - [Microsoft: Configure Certificate Enrollment Policy Web Service](https://learn.microsoft.com/en-us/windows-server/identity/ad-cs/configure-certificate-enrollment-policy-web-service)
+- [Microsoft: Domain certificate-authentication strong mapping](https://support.microsoft.com/en-us/servicing/os/windows-server/2022/05/kb5014754-certificate-based-authentication-changes-on-windows-domain-controllers)
 
 ## Libraries and infrastructure
 
@@ -25,6 +26,10 @@ These primary references guide implementation and interoperability work. A refer
 - [Java PKCS#11 integration guide](https://docs.oracle.com/en/java/javase/25/security/pkcs11-reference-guide1.html)
 - [Spring Boot](https://spring.io/projects/spring-boot/)
 - [PostgreSQL locking](https://www.postgresql.org/docs/current/explicit-locking.html)
+- [PostgreSQL failover and old-primary exclusion](https://www.postgresql.org/docs/current/warm-standby-failover.html)
+- [PostgreSQL replication durability](https://www.postgresql.org/docs/current/warm-standby.html#SYNCHRONOUS-REPLICATION)
+- [PostgreSQL continuous archiving and PITR](https://www.postgresql.org/docs/current/continuous-archiving.html)
+- [Kubernetes force deletion and old-process uncertainty](https://kubernetes.io/docs/tasks/run-application/force-delete-stateful-set-pod/)
 - [Redis distributed locking and lease limitations](https://redis.io/docs/latest/develop/clients/patterns/distributed-locks/)
 
 ## CA engine evaluation
@@ -32,7 +37,7 @@ These primary references guide implementation and interoperability work. A refer
 - [EJBCA architecture and multiple-authority support](https://docs.keyfactor.com/ejbca/9.3.2/ejbca-architecture)
 - [Smallstep CA concepts](https://smallstep.com/docs/step-ca/certificate-authority-core-concepts/)
 
-Existing engines are evaluation candidates, not selected dependencies. Assess feature editions, custody/provider contracts, isolation, interoperability, and licensing before adopting one beneath FireCA.
+FireCA-owned CA-service logic is selected. EJBCA is the bounded comparison candidate before issuance contracts freeze, not an adopted dependency; Smallstep can provide a capability baseline. Assess actual editions, custody/transaction responsibility, isolation, interoperability and licensing. A material contrary result needs a superseding ownership decision.
 
 ## Public trust and licensing context
 

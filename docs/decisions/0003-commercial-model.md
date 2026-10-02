@@ -23,4 +23,4 @@ The policy is documented, but a free-use license and commercial agreement have n
 
 ## Work remaining
 
-Draft formal terms, resolve contributor/redistribution rights and evaluation treatment, and define operational expiry behavior. No pricing or legal enforceability claim is established by this record. See [licensing policy](../licensing.md).
+Draft formal terms, resolve contributor/redistribution rights, evaluation agreements, prices and license metrics. [0007](0007-license-and-exit-continuity.md) defines accepted acquired-version/maintenance, offline recovery and hosted exit behavior. No formal license grant or legal enforceability claim is established by these records. See [licensing policy](../licensing.md).

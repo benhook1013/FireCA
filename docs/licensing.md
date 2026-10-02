@@ -43,6 +43,14 @@ Do not represent the policy as a finalized enforceable agreement or adopt an ins
 
 Commercial disconnected deployments should verify signed license files locally, without mandatory online activation or periodic callbacks. The official hosted service can enforce its subscription through its own control plane.
 
-The policy does not yet define software behavior on license expiry. Specify continuity, renewal, administration, recovery, and data-export behavior before implementing checks. Existing certificate cryptographic validity is determined by the certificate and relying-party validation, not by a FireCA subscription flag.
+The [accepted continuity decision](decisions/0007-license-and-exit-continuity.md) gives paid self-hosted customers continued operation of acquired versions within licensed scope. Maintenance controls updates/support separately. Maintenance expiry does not stop entitled-version issuance, renewal, revocation, recovery or exports.
+
+Signed local entitlement identifies entitled releases/version ranges and use/capacity rights separately from maintenance eligibility. Missing/invalid-file recovery preserves keys/history and authenticated incident administration, backup/recovery, authorized exports and necessary status operations; restore legitimate entitlement before new leaf issuance. A new unentitled installation cannot activate production issuers.
+
+Organizational evaluation is paid by default under explicit terms. Any promotional waiver needs a separate commercial decision; there are no government/education/charity category exemptions. Production certificates require continuity rights before issuance. Contributor/modification/redistribution terms remain to be prepared.
+
+The hosted cancellation default is a 90-day notified transition with bounded renewal of existing assets and migration/export assistance. Status publication continues through the latest issued certificate expiry plus recorded retention/cache margin. Validity limits and funded publication/transfer responsibility are part of the commercial agreement; different arrangements need a recorded exception before issuance.
+
+These are accepted business/product requirements, not operative grants. Formal agreements are still pending. Existing certificate cryptographic validity is determined by the certificate and relying-party validation, not by a FireCA subscription flag.
 
 Pricing, enforcement mechanics, and formal terms are separate from the tenant/authority model. License checks must not become an undocumented dependency on the official hosted service.

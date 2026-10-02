@@ -9,6 +9,8 @@
 - Independence: neither resolution reviewer received the other's draft or recommendations
 - Status: proposed decisions and evidence gates; no new ADR, licensing grant, or product implementation adopted
 
+Subsequent adjudication: the user delegated decisions and process integration after this review. [ADRs 0004–0007](../../decisions/README.md) and the [implementation process](../../implementation-process.md) now record the accepted choices. The reports and comparison below preserve their original proposal status; implementation/evidence findings remain open in [delivery status](../../delivery-status.md).
+
 The complete proposals are [Sol High A](sol-high-a.md) and [Sol High B](sol-high-b.md). Technical findings are preserved with personal context redacted; B's opening title was formatted as a Markdown heading. This comparison and the preferred choices below are the parent agent's interpretation, distinguished from the independent reports.
 
 Both reviewers recommend proceeding. They provisionally favor a narrow FireCA-owned CA core over maintained libraries, a self-hosted internal TLS lifecycle scenario, and early real Windows experiments. They recommend changing the release gates and operating contracts rather than changing the accepted platform or eventual product scope.

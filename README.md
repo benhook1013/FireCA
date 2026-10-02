@@ -27,6 +27,8 @@ FireCA is a planned API-first, multitenant platform for private PKI, certificate
 
 Runtime versions, build tooling, and initial service packaging remain implementation decisions. No language runtime, containers, or infrastructure are required to read the design.
 
+The selected first outcome is self-hosted internal TLS issuance/renewal with observed deployment under an existing root. FireCA owns a narrow CA core over maintained libraries; one shared signer initially serves all tenants, with explicit software-custody trust and manual uncertain-takeover/recovery procedures. DNS-01 and one TLS endpoint observer come first; real native Windows feasibility runs early alongside them.
+
 ## Documentation
 
 Start with the [documentation index](docs/README.md).
@@ -35,6 +37,9 @@ Start with the [documentation index](docs/README.md).
 - [Architecture and coordination](docs/architecture.md)
 - [Domain model and lifecycle](docs/domain-model.md)
 - [Implementation roadmap and acceptance criteria](docs/roadmap.md)
+- [Implementation process and evidence gates](docs/implementation-process.md)
+- [Delivery and finding status](docs/delivery-status.md)
+- [First outcome and pilot hypothesis](docs/pilot-charter.md)
 - [Licensing policy](docs/licensing.md)
 - [Architecture decisions](docs/decisions/README.md)
 - [Standards and integration references](docs/references.md)
@@ -46,6 +51,8 @@ Start with the [documentation index](docs/README.md).
 The agreed direction is **source-available**, with free personal non-commercial use and paid organizational use, including businesses, government, education, charities, and public-interest organizations. Commercial hosting, resale, and embedding require separately defined rights.
 
 The formal personal-use and commercial licenses have not yet been adopted. The [licensing policy](docs/licensing.md) records business intent and does not itself grant those permissions. The current [copyright notice](LICENSE) reserves rights pending publication of formal terms. This project is not presently offered under an open-source license.
+
+Accepted commercial intent gives paid self-hosted customers continued operation of acquired versions, with updates/support under separate maintenance rights. All organizational categories remain paid. The hosted exit default is a 90-day transition plus status retention for outstanding certificates; formal terms and implementation are pending.
 
 ## Working on FireCA
 

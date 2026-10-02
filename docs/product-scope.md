@@ -15,6 +15,8 @@ The official hosted service and self-hosted installations use the same product. 
 
 All organizational deployments are intended to require a paid license, including government, education, charities, and public-interest organizations. See [licensing](licensing.md).
 
+The accepted first engineering focus is self-hosted internal TLS issuance/renewal with observed deployment under an existing customer root. The [pilot charter](pilot-charter.md) is a commercial hypothesis, not a selected customer. Windows/HSM/isolation requirements move ahead of any pilot that depends on them.
+
 ## Feature commitments
 
 | Area | Intended capability | Delivery position |
@@ -28,7 +30,7 @@ All organizational deployments are intended to require a paid license, including
 | ACME server | Standard enrollment and renewal against FireCA private issuers | Initial usable CA release |
 | Native Windows autoenrollment | Native clients, policy/templates, enrollment and renewal; no mandatory endpoint agent | Required eventual feature; early feasibility prototype |
 | Inventory | FireCA-issued, imported, and discovered certificates without requiring their private keys | Core |
-| Assignments and observations | Relate certificates to hosts/services/devices and record what is actually deployed | Initial assignments; collectors expand later |
+| Assignments and observations | Relate certificates to hosts/services/devices and record what is actually deployed | One registered TLS observer in the first lifecycle release; stores/discovery expand later |
 | Alerts | Expiry, renewal failures, missing replacement deployment, and stale observations | Core lifecycle, expanding with collectors |
 | Key custody | Client-owned CSR keys, browser-generated keys, managed software keys, and explicit export policy | CSR first; other modes phased |
 | Standalone keys | Generate/import/store/version/export keys independently of certificates; controlled operations later | Progressive |
@@ -38,6 +40,8 @@ All organizational deployments are intended to require a paid license, including
 | SDKs and deployment connectors | Improve automation over the documented API | Later |
 
 "Initial usable CA release" includes the HTTP API, a basic portal, and an ACME server. This is distinct from the later enterprise milestone that completes native Windows enrollment.
+
+DNS-01 is the first ACME challenge. Self-hosted local DNS works in the configured network context; initial hosted support may use publicly reachable challenge records. Hosted private-only DNS is supported only after its scoped tenant-local validator is demonstrated.
 
 ## Trust and public certificates
 
@@ -61,6 +65,8 @@ External public issuance can accept a client-generated CSR. FireCA need not poss
 ## Product boundaries
 
 FireCA implements product policy and orchestration using maintained crypto and ASN.1 libraries. It does not implement new cryptographic primitives.
+
+The selected direction is a narrow FireCA-owned CA core, checked against one existing-engine workflow before issuance contracts freeze. The initial shared software tier trusts privileged platform/database operators and control-plane authorization. One shared signer can serve many tenants; uncertain takeover and history recovery are manual safety operations.
 
 An inventory agent may observe certificate stores or deployments. It does not replace the native Windows enrollment requirement. Discovery does not imply authority to issue for every discovered name.
 
