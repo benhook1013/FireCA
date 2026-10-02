@@ -1,0 +1,37 @@
+# Java build output
+target/
+build/
+.gradle/
+*.class
+*.log
+hs_err_pid*
+
+# Editor and operating-system files
+.idea/
+*.iml
+.vscode/
+.DS_Store
+Thumbs.db
+*~
+
+# Local configuration and runtime data
+.env
+.env.*
+!.env.example
+local.properties
+data/
+tmp/
+.cache/
+*.dump
+*.sql.gz
+
+# Potentially sensitive key material and identity bundles
+*.key
+*.pem
+*.p8
+*.pk8
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.kdb
